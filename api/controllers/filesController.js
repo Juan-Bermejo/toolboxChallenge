@@ -13,20 +13,21 @@ class FilesController {
     }
 
     async getOneDataFile(fileName) {
-        return await this.toolbox.getFileData(fileName)
+        const regex = /,\s*|\n/;
+        const stringData = await this.toolbox.getFileData(fileName)
+        const array = stringData.split(regex).filter((value) => {
+            return value !== '';
+        })
+        return this.checkDataFile(array)
+
     }
 
     async getAllDataFiles() {
         this.files = await this.toolbox.getListFiles()
-        const regex = /,\s*|\n/;
 
         for (const fileName of Array.from(this.files)) {
             const resData =  await this.getOneDataFile(fileName)
-            const array = resData.split(regex).filter((value) => {
-                return value !== '';
-            })
-            const data = this.checkDataFile(array)
-            this.filesData = [].concat(this.filesData, data)
+            this.filesData = [].concat(this.filesData, resData)
         }
 
         return this.filesData
