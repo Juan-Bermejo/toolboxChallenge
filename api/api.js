@@ -1,0 +1,33 @@
+/*const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
+// Example GET route for a "users" endpoint
+app.get('/files/data', (req, res) => {
+  
+
+  const users = [
+    { id: 1, name: 'John' },
+    { id: 2, name: 'Jane' },
+  ];
+  res.json(users);
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});*/
+
+import express from 'express';
+import bodyParser from 'body-parser';
+import filesRoutes from './routes/files.js';
+const port = process.env.PORT || 3000;
+
+const app = express();
+
+app.use(bodyParser.json())
+app.use('/files/', filesRoutes)
+
+app.listen(port, () => {
+  console.log(`Server running on port: ${port}`);
+});
