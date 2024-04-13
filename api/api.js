@@ -20,13 +20,13 @@ app.listen(port, () => {
 
 import express from 'express';
 import bodyParser from 'body-parser';
-import filesRoutes from './routes/files.js';
+import routes from './routes/routes.js';
 const port = process.env.PORT || 3000;
 
 const app = express();
 
 app.use(bodyParser.json())
-app.use('/files/', filesRoutes)
+app.use('/files/', routes)
 
 app.listen(port, () => {
   console.log(`Server running on port: ${port}`);
