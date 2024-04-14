@@ -1,16 +1,19 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "type":"module",
+  "type": "module",
   "description": "Api that reads external api of toolbox",
   "main": "api.js",
   "scripts": {
     "start": "node api.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "Juan Ignacio Bermejo",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "chai": "^4.1.2",
+    "chai-http": "^4.4.0",
+    "express": "^4.19.2",
+    "mocha": "^10.4.0"
   }
 }

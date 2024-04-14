@@ -1,25 +1,37 @@
-import FilesController from '../controllers/filesController.js';
-import express from 'express';
+import FilesController from '../controllers/filesController.js'
+import express from 'express'
 
 const file = new FilesController()
 const routes = express.Router()
 
-
-routes.get('/data', async(req, res) => {
-   const name = req.query.fileName;
-   if(name) {
+routes.get('/data', async (req, res) => {
+  try {
+    const name = req.query.fileName
+    if (name) {
       const response = await file.getOneDataFile(name)
       res.status(200).json(response)
-   } else {
+    } else {
       const response = await file.getAllDataFiles()
       res.status(200).json(response)
-   }
+    }
+  } catch (error) {
+    console.error('Error:', error.message)
+    res.status(error.status || 500).json({
+      message: error.message || 'Internal Server Error'
+    })
+  }
+})
 
-});
+routes.get('/list', async (req, res) => {
+  try {
+    const response = await file.getListFiles()
+    res.status(200).json(response)
+  } catch (error) {
+    console.error('Error:', error.message)
+    res.status(error.status || 500).json({
+      message: error.message || 'Internal Server Error'
+    })
+  }
+})
 
-routes.get('/list', async(req, res) => {
-   const response = await file.getListFiles()
-   res.status(200).json(response)
-});
-
-export default routes;
+export default routes
