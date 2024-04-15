@@ -28,6 +28,7 @@ class FilesController {
   }
 
   async getAllDataFiles () {
+    this.filesData = []
     this.files = await this.toolbox.getListFiles()
 
     for (const fileName of Array.from(this.files)) {

@@ -10,8 +10,12 @@
   align-content: center;
 }
 
+.titleContainer {
+  margin: 0;
+}
+
 .title {
-  margin: 0px 0px 0px 20px;
+  margin: 0px 0px 15px 20px;
   height: 40px;
   color: #ffff;
 }

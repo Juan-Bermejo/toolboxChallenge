@@ -7,9 +7,9 @@ import './App.css';
 
 const App = () => {
   return (
-    <div>
+    <div style={{ overflow: 'hidden' }}>
       <Navbar className='navbar' expand="lg">
-        <Container>
+        <Container className='titleContainer'>
           <h1 className='title'>React Test App</h1>
         </Container>
       </Navbar>

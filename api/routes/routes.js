@@ -24,7 +24,7 @@ routes.get('/data', async (req, res) => {
 
 routes.get('/list', async (req, res) => {
   try {
-    const response = await file.getListFiles()
+    const response = await file.listFiles()
     res.status(200).json(response)
   } catch (error) {
     console.error('Error:', error.message)

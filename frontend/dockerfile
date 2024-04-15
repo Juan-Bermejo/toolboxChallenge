@@ -1,0 +1,9 @@
+FROM node:16
+RUN mkdir -p /usr/src/front
+RUN chmod -R 777 /usr/src/front
+WORKDIR /usr/src/front
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]
