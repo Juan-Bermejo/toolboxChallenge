@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  margin: 0;
+  position: absolute;
+}
+
+.navbar {
+  background-color: #ff6666;
+  height: 80px;
+  align-content: center;
+}
+
+.title {
+  margin: 0px 0px 0px 20px;
+  height: 40px;
+  color: #ffff;
+}
