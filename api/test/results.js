@@ -31,13 +31,15 @@ export const resultCheckData = [
   }
 ]
 
-export const resultOnefile = [{
-  file: 'test2.csv',
-  lines: [
-    {
-      text: 'oGENYSNpNgYaPmpLr',
-      number: 4,
-      hex: 'a497d32a96fa0bd5852a749768f0adc3'
-    }
-  ]
-}]
+export const resultOnefile = [
+  {
+      "file": "test2.csv",
+      "lines": [
+          {
+              "text": "cJk",
+              "number": 59,
+              "hex": "cac3764c37e29589c9d3ced5037d5fa9"
+          }
+      ]
+  }
+]
